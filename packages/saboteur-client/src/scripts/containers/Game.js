@@ -24,6 +24,7 @@ const computeGameClass = (game, selectedCard, currentPlayer) =>
     selectedCard && "game--selected-card",
     game && `game--status-${game.status}`,
     game &&
+      currentPlayer &&
       game.currentPlayerId === currentPlayer.id &&
       "game--current-player-turn"
   ].join(" ");
@@ -42,7 +43,8 @@ export class Game extends Component {
     actions
       .getGame(this.state.id)
       .then(this.updateGame.bind(this))
-      .catch(() => {
+      .catch(err => {
+        console.log("error", err);
         this.props.history.replace("/");
       });
     this.initEvents(this.props.ws);

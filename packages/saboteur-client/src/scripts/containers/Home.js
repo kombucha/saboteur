@@ -111,10 +111,6 @@ export default class Home extends Component {
     });
   }
 
-  onSelectGame(game) {
-    this.props.history.push(`/games/${game.id}`);
-  }
-
   deleteGame(type, gameId) {
     actions.deleteGame(gameId);
   }
@@ -132,13 +128,11 @@ export default class Home extends Component {
         <Games
           games={this.state.games.lobby}
           deleteGame={this.deleteGame.bind(this, "lobby")}
-          onSelectGame={this.onSelectGame.bind(this)}
         />
         <h3 className="home__title">Your games</h3>
         <Games
           games={this.state.games.playing}
           deleteGame={this.deleteGame.bind(this, "playing")}
-          onSelectGame={this.onSelectGame.bind(this)}
         />
       </div>
     );

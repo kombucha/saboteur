@@ -2,7 +2,7 @@ import React from "react";
 import GameItem from "./GameItem";
 import "../../styles/Games.css";
 
-export default ({ games, onSelectGame, deleteGame }) =>
+export default ({ games, deleteGame }) =>
   <div className="games">
     {!games || games.length === 0
       ? <p>Empty</p>

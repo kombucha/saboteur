@@ -5,6 +5,7 @@
   box-sizing: border-box;
   border-radius: 12px;
   transform: translateY(-50%);
+  z-index: var(--z-discard);
 }
 
 .deck--empty {
