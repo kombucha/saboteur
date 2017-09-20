@@ -406,6 +406,7 @@ export class Game extends Component {
   }
 
   renderByStatus() {
+    console.log("WOOT", this.state.game.status);
     switch (this.state.game.status) {
       case gameRules.STATUSES.WAITING_FOR_PLAYERS:
         return (
